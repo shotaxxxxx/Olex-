@@ -107,4 +107,10 @@
   &.-overflow {
     overflow: hidden;
   }
+
+  &.-pt80 {
+    @include mq("xl") {
+      padding-top: 80px;
+    }
+  }
 }

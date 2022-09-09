@@ -6,9 +6,206 @@
   Header
 -----------------------------------------------------*/
 .l-header {
-  position: relative;
+  position: fixed;
   z-index: 5;
   top: 0;
   right: 0;
   left: 0;
+  width: 100%;
+  max-width: 100vw;
+  padding: 47px 0;
+  mix-blend-mode: exclusion;
+}
+
+.l-header-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 4.8vw;
+
+  @include mq("xxl") {
+    padding: 0 6.07vw;
+  }
+}
+
+.l-header-title {
+  position: relative;
+  z-index: 5;
+}
+
+.header-logo {
+  display: block;
+  transition: color 0.5s ease-in;
+  color: $base-color;
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  @include mq("md") {
+    font-size: 1.5rem;
+  }
+
+  @include mq("lg") {
+    font-size: 2rem;
+  }
+}
+
+.l-header-nav {
+  @include mq("xl") {
+    width: 700px;
+    margin-left: auto;
+  }
+}
+
+.l-global-nav {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 130px 4.8vw 0;
+  overflow: hidden;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in;
+  background-color: $main-color;
+
+  @include mq("xl") {
+    display: flex;
+    position: static;
+    align-items: center;
+    justify-content: flex-end;
+    height: auto;
+    padding: 0;
+    transform: translateX(0);
+    background-color: transparent;
+  }
+}
+
+.global-nav__item {
+  transform: translate3d(-800px, 0, 0);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  @include mq("xl") {
+    font-size: 1rem;
+  }
+
+  @include mq("xl") {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.global-nav__item + .global-nav__item {
+  padding-top: 35px;
+
+  @include mq("xl") {
+    margin-left: 24px;
+    padding-top: 0;
+  }
+}
+
+.global-nav__item.mt {
+  margin-top: 45px;
+
+  @include mq("xl") {
+    margin: 0 0 0 24px;
+  }
+}
+
+.global-nav__link {
+  display: block;
+  position: relative;
+  padding: 8px 0;
+  color: $secondary-text-color;
+
+  @include mq("lg") {
+    color: $base-color;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    margin: auto;
+    transform: scale(0, 1);
+    transform-origin: center top;
+    transition: transform 0.3s ease-in-out;
+    background-color: $base-color;
+  }
+
+  &:hover {
+    &::before {
+      transform: scale(1, 1);
+    }
+  }
+}
+
+.global-nav__button {
+  width: 148px;
+  border: 1px solid $primary-border-color;
+
+  &:hover {
+    color: $primary-text-color;
+
+    &::after {
+      background-color: $base-color;
+    }
+  }
+}
+
+.button__hamburger {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  right: 4.8vw;
+  bottom: 0;
+  width: 34px;
+  height: 34px;
+  margin: auto 0;
+  border: 2px solid $base-color;
+  background-color: transparent;
+  appearance: none;
+
+  @include mq("xl") {
+    display: none;
+  }
+}
+
+.hamburger {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  margin: auto;
+  background-color: $base-color;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: top 0.5s ease-in-out, transform 0.5s ease-in-out;
+    background-color: inherit;
+  }
+
+  &::before {
+    top: -5px;
+  }
+
+  &::after {
+    top: 5px;
+  }
 }

@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="各ページ固有の説明文を124文字程度で" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="【twitterのアカウント名】" />
+    <meta property="og:url" content="【サイトURL】" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="【サイト名】 | 〇〇〇〇" />
+    <meta property="og:description" content="各ページ固有の説明文を124文字程度で" />
+    <meta property="og:site_name" content="【サイト名】" />
+    <meta property="og:image" content="【サイトURL】OGP画像のファイルパス" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name=“robots” content=“noindex”>
+    <link rel="canonical" href="【サイトURL】/" />
+    <link rel="stylesheet" href="/assets/css/common.css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="author" href="/humans.txt" />
+    <title>Olex | Ore no Flexible CSS Grid System</title>
+    <script src="/assets/js/main.bundle.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+  </head>
+  <body>
+    <header class="l-header">
+      <div class="l-header-wrapper">
+        <h1 class="l-header-title">
+          <span class="u-visuallyHidden">Olex.css</span>
+          <a href="#" class="header-logo">Olex.css</a>
+        </h1>
+        <nav class="l-header-nav">
+          <h2 class="u-visuallyHidden">サイト内メニュー</h2>
+          <button
+            type="button"
+            class="js-button-hamburger button__hamburger"
+            aria-controls="global-nav"
+            aria-expanded="false"
+          >
+            <span class="hamburger">
+              <span class="u-visuallyHidden">メニューを開閉する</span>
+            </span>
+          </button>
+          <ul id="global-nav" class="l-global-nav">
+            <li class="global-nav__item">
+              <a href="#overview" class="global-nav__link">Overview</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="#grid" class="global-nav__link">Grid</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="#alignment" class="global-nav__link">Alignment</a>
+            </li>
+            <li class="global-nav__item">
+              <a href="#direction" class="global-nav__link">Direction</a>
+            </li>
+            <li class="global-nav__item c-button button button-md mt">
+              <a href="https://shibajuku.net/olex/" class="global-nav__button c-button__link">How to Make</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="l-main">
+      <div class="hero">
+        <div class="l-grid">
+          <div class="l-grid__item" data-cols="xxs:12 xl:6">
+            <div class="hero-textArea">
+              <h2 class="c-heading hero-title c-inview" data-type="zoomIn" data-duration="slow">
+                Ore no<br />
+                Flexible CSS<br />
+                Grid System.
+              </h2>
+              <p class="hero-text">
+                俺流のフレキシブルCSSグリッドシステム<br class="u-break -xxs" />「Olex」のデモページ。<br />
+                「Olex」はFlexboxを利用した<br
+                  class="u-break -xxs"
+                />単なるグリッドシステムなので、<br />気になった方は、解説ページを参考に<br
+                  class="u-break -xxs"
+                />自分で作ってもらえたらと思います。
+              </p>
+              <p class="hero-button c-button button button-lg">
+                <a href="https://shibajuku.net/olex/" class="hero-button__link c-button__link">How to Make</a>
+              </p>
+            </div>
+          </div>
+          <div class="l-grid__item" data-cols="xxs:12 xl:6">
+            <div class="hero-imageArea">
+              <figure class="hero-imgWrap">
+                <ul class="l-grid">
+                  <li
+                    class="l-grid__item hero-image"
+                    data-cols="xxs:4"
+                    data-type="slideCubeIn"
+                    data-duration="slow"
+                    data-group="lg:3"
+                  >
+                    <img
+                      src="assets/img/common/hero-left.png"
+                      srcset="assets/img/common/hero-left.png, assets/img/common/hero-left@2x.png 2x"
+                      alt=""
+                    />
+                  </li>
+                  <li
+                    class="l-grid__item hero-image"
+                    data-cols="xxs:4"
+                    data-type="slideCubeIn"
+                    data-duration="slow"
+                    data-group="lg:3"
+                  >
+                    <img
+                      src="assets/img/common/hero-center.png"
+                      srcset="assets/img/common/hero-center.png, assets/img/common/hero-center@2x.png 2x"
+                      alt=""
+                    />
+                  </li>
+                  <li
+                    class="l-grid__item hero-image"
+                    data-cols="xxs:4"
+                    data-type="slideCubeIn"
+                    data-duration="slow"
+                    data-group="lg:3"
+                  >
+                    <img
+                      src="assets/img/common/hero-right.png"
+                      srcset="assets/img/common/hero-right.png, assets/img/common/hero-right@2x.png 2x"
+                      alt=""
+                    />
+                  </li>
+                </ul>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="section overview-section" id="overview">
+        <div class="title-container l-spacer -xlargeBottom">
+          <h2 class="heading-title c-inview" data-type="slideCubeIn">Overview</h2>
+          <p class="text-explanation">
+            12カラムを基準として<br class="u-break -xxs" />必要なカラム数を指定するグリッドシステム。<br />
+            間隔を開けるも閉じるも、その大きさも選択できる。<br />
+            位置揃えや順番の入れ替えも可能。<br class="u-break -xxs" />後は自分でカスタマイズして下さい。
+          </p>
+        </div>
+        <div class="container -bgcolor bgmask l-spacer -xlargeTop -xlargeBottom">
+          <div class="l-grid" data-gutter="normal" data-align="center">
+            <div class="l-grid__item" data-cols="xl:3">
+              <h3 class="contents-title -secondary">Feature</h3>
+              <p class="contents-text -secondary">
+                Flexboxを利用したグリッドシステムで、単なる横並びや12カラムをベースとしたグリッドレイアウトも可能です。
+                グリッド間のスペースにはborderを利用していて間隔の調整が容易にできます。もちろんこのページのレイアウトは「Olex.css」を使っているので、詳しくはデベロッパーツールで。
+              </p>
+            </div>
+            <div class="l-grid__item" data-cols="xl:9">
+              <div class="l-grid" data-align="center" data-gutter="normal">
+                <div class="l-grid__item feature__item" data-cols="xxs:12 md:4">
+                  <div class="overview__item">
+                    <h4 class="item-title">Grid</h4>
+                    <p class="item-text">12カラムを基準とした<br />グリッドシステム。</p>
+                    <figure class="item-figure">
+                      <img src="assets/img/common/icon-grid.png" alt="" />
+                    </figure>
+                  </div>
+                </div>
+                <div class="l-grid__item feature__item" data-cols="xxs:12 md:4">
+                  <div class="overview__item">
+                    <h4 class="item-title">Alignment</h4>
+                    <p class="item-text">各アイテムの位置を揃える<br class="u-break -lg" />こともできる。</p>
+                    <figure class="item-figure">
+                      <img src="assets/img/common/icon-alignment.png" alt="" />
+                    </figure>
+                  </div>
+                </div>
+                <div class="l-grid__item feature__item" data-cols="xxs:12 md:4">
+                  <div class="overview__item">
+                    <h4 class="item-title">Direction</h4>
+                    <p class="item-text">アイテムの並び順を<br />逆順に変更できる。</p>
+                    <figure class="item-figure">
+                      <img src="assets/img/common/icon-order.png" alt="" />
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section grid-section" id="grid">
+        <div class="title-container">
+          <h2 class="heading-title c-inview" data-type="slideCubeIn">Grid</h2>
+          <p class="text-explanation">
+            スマホは2列PCは4列なども<br
+              class="u-break -xxs"
+            />属性値の付け替えでOK。<br />間隔を開けるも閉じるも、属性で調整。<br />間隔の大きさも拡張可能。
+          </p>
+        </div>
+        <div class="l-spacer -smallTop" data-space="xl:xlargeTop">
+          <div class="container">
+            <div class="l-grid l-gridible" data-dir="reverse" data-gutter="large">
+              <div class="l-grid__item" data-cols="xl:4">
+                <div class="l-spacer -area sticky-item">
+                  <h3 class="contents-title">Flexible</h3>
+                  <p class="contents-text">
+                    スマホ、タブレット、PCで異なるカラムのレイアウトも容易に対応できます。12カラムをベースとして、必要なカラム数をカスタムデータ属性で指定するだけでレイアウトが可能。
+                  </p>
+                </div>
+              </div>
+              <div class="l-grid__item" data-cols="xl:8">
+                <ul class="l-grid">
+                  <li class="l-grid__item card" data-cols="xxs:6">
+                    <figure class="card-image">
+                      <img
+                        src="assets/img/common/pic1.png"
+                        srcset="assets/img/common/pic1.png, assets/img/common/pic1@2x.png 2x"
+                        alt=""
+                      />
+                      <figcaption class="card-figcaption">SP: 6/12 - TAB: 6/12</figcaption>
+                    </figure>
+                  </li>
+                  <li class="l-grid__item card" data-cols="xxs:6">
+                    <figure class="card-image">
+                      <img
+                        src="assets/img/common/pic2.png"
+                        srcset="assets/img/common/pic2.png, assets/img/common/pic2@2x.png 2x"
+                        alt=""
+                      />
+                      <figcaption class="card-figcaption">SP: 6/12 - TAB: 6/12</figcaption>
+                    </figure>
+                  </li>
+                  <li class="l-grid__item card" data-cols="xxs:6 sm:3">
+                    <figure class="card-image">
+                      <img
+                        src="assets/img/common/pic3.png"
+                        srcset="assets/img/common/pic3.png, assets/img/common/pic3@2x.png 2x"
+                        alt=""
+                      />
+                      <figcaption class="card-figcaption">SP: 6/12 - TAB: 3/12</figcaption>
+                    </figure>
+                  </li>
+                  <li class="l-grid__item card" data-cols="xxs:6 sm:3">
+                    <figure class="card-image">
+                      <img
+                        src="assets/img/common/pic4.png"
+                        srcset="assets/img/common/pic4.png, assets/img/common/pic4@2x.png 2x"
+                        alt=""
+                      />
+                      <figcaption class="card-figcaption">SP: 6/12 - TAB: 3/12</figcaption>
+                    </figure>
+                  </li>
+                  <li class="l-grid__item card" data-cols="xxs:6 sm:3">
+                    <figure class="card-image">
+                      <img
+                        src="assets/img/common/pic5.png"
+                        srcset="assets/img/common/pic5.png, assets/img/common/pic5@2x.png 2x"
+                        alt=""
+                      />
+                      <figcaption class="card-figcaption">SP: 6/12 - TAB: 3/12</figcaption>
+                    </figure>
+                  </li>
+                  <li class="l-grid__item card" data-cols="xxs:6 sm:3">
+                    <figure class="card-image">
+                      <img
+                        src="assets/img/common/pic6.png"
+                        srcset="assets/img/common/pic6.png, assets/img/common/pic6@2x.png 2x"
+                        alt=""
+                      />
+                      <figcaption class="card-figcaption">SP: 6/12 - TAB: 3/12</figcaption>
+                    </figure>
+                  </li>
+                  <li class="l-grid__item card" data-cols="xxs:12 sm:8">
+                    <figure class="card-image">
+                      <img
+                        src="assets/img/common/pic7.png"
+                        srcset="assets/img/common/pic7.png, assets/img/common/pic7@2x.png 2x"
+                        alt=""
+                      />
+                      <figcaption class="card-figcaption">SP: 12/12 - TAB: 8/12</figcaption>
+                    </figure>
+                  </li>
+                  <li class="l-grid__item card" data-cols="xxs:6 sm:4">
+                    <figure class="card-image">
+                      <img
+                        src="assets/img/common/pic8.png"
+                        srcset="assets/img/common/pic8.png, assets/img/common/pic8@2x.png 2x"
+                        alt=""
+                      />
+                      <figcaption class="card-figcaption">SP: 6/12 - TAB: 4/12</figcaption>
+                    </figure>
+                  </li>
+                  <li class="l-grid__item card" data-cols="xxs:6 sm:4">
+                    <figure class="card-image">
+                      <img
+                        src="assets/img/common/pic9.png"
+                        srcset="assets/img/common/pic9.png, assets/img/common/pic9@2x.png 2x"
+                        alt=""
+                      />
+                      <figcaption class="card-figcaption">SP: 6/12 - TAB: 4/12</figcaption>
+                    </figure>
+                  </li>
+                  <li class="l-grid__item card" data-cols="xxs:12 sm:8">
+                    <figure class="card-image">
+                      <img
+                        src="assets/img/common/pic10.png"
+                        srcset="assets/img/common/pic10.png, assets/img/common/pic10@2x.png 2x"
+                        alt=""
+                      />
+                      <figcaption class="card-figcaption">SP: 6/12 - TAB: 4/12</figcaption>
+                    </figure>
+                  </li>
+                  <li class="l-grid__item card" data-cols="xxs:4">
+                    <figure class="card-image">
+                      <img
+                        src="assets/img/common/pic11.png"
+                        srcset="assets/img/common/pic11.png, assets/img/common/pic11@2x.png 2x"
+                        alt=""
+                      />
+                      <figcaption class="card-figcaption">SP: 6/12 - TAB: 4/12</figcaption>
+                    </figure>
+                  </li>
+                  <li class="l-grid__item card" data-cols="xxs:4">
+                    <figure class="card-image">
+                      <img
+                        src="assets/img/common/pic12.png"
+                        srcset="assets/img/common/pic12.png, assets/img/common/pic12@2x.png 2x"
+                        alt=""
+                      />
+                      <figcaption class="card-figcaption">SP: 6/12 - TAB: 4/12</figcaption>
+                    </figure>
+                  </li>
+                  <li class="l-grid__item card" data-cols="xxs:4">
+                    <figure class="card-image">
+                      <img
+                        src="assets/img/common/pic13.png"
+                        srcset="assets/img/common/pic13.png, assets/img/common/pic13@2x.png 2x"
+                        alt=""
+                      />
+                      <figcaption class="card-figcaption">SP: 6/12 - TAB: 4/12</figcaption>
+                    </figure>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="l-spacer -xlargeTop">
+              <div class="l-grid gutter" data-gutter="large">
+                <div class="l-grid__item" data-cols="xl:4">
+                  <div class="l-spacer -area sticky-item">
+                    <h3 class="contents-title">Gutter</h3>
+                    <p class="contents-text">
+                      各アイテム間のスペースもカスタムデータ属性を指定するだけで、スペースの有無はもちろん、その大きさも選択できます。
+                      また、このスペースにはborderプロパティを使っているので、スペースのサイズを拡張するのも容易です。
+                    </p>
+                  </div>
+                </div>
+                <div class="l-grid__item" data-cols="xl:8">
+                  <ul class="l-grid" data-gutter="small">
+                    <li class="l-grid__item card" data-cols="xxs:6">
+                      <figure class="card-image">
+                        <img
+                          src="assets/img/common/pic14.png"
+                          srcset="assets/img/common/pic14.png, assets/img/common/pic14@2x.png 2x"
+                          alt=""
+                        />
+                        <figcaption class="card-figcaption">SP: 6/12 - TAB: 6/12</figcaption>
+                      </figure>
+                    </li>
+                    <li class="l-grid__item card" data-cols="xxs:6">
+                      <figure class="card-image">
+                        <img
+                          src="assets/img/common/pic15.png"
+                          srcset="assets/img/common/pic15.png, assets/img/common/pic15@2x.png 2x"
+                          alt=""
+                        />
+                        <figcaption class="card-figcaption">SP: 6/12 - TAB: 6/12</figcaption>
+                      </figure>
+                    </li>
+                    <li class="l-grid__item card" data-cols="xxs:6 sm:3">
+                      <figure class="card-image">
+                        <img
+                          src="assets/img/common/pic16.png"
+                          srcset="assets/img/common/pic16.png, assets/img/common/pic16@2x.png 2x"
+                          alt=""
+                        />
+                        <figcaption class="card-figcaption">SP: 6/12 - TAB: 6/12</figcaption>
+                      </figure>
+                    </li>
+                    <li class="l-grid__item card" data-cols="xxs:6 sm:3">
+                      <figure class="card-image">
+                        <img
+                          src="assets/img/common/pic17.png"
+                          srcset="assets/img/common/pic17.png, assets/img/common/pic17@2x.png 2x"
+                          alt=""
+                        />
+                        <figcaption class="card-figcaption">SP: 6/12 - TAB: 6/12</figcaption>
+                      </figure>
+                    </li>
+                    <li class="l-grid__item card" data-cols="xxs:6 sm:3">
+                      <figure class="card-image">
+                        <img
+                          src="assets/img/common/pic18.png"
+                          srcset="assets/img/common/pic18.png, assets/img/common/pic18@2x.png 2x"
+                          alt=""
+                        />
+                        <figcaption class="card-figcaption">SP: 6/12 - TAB: 6/12</figcaption>
+                      </figure>
+                    </li>
+                    <li class="l-grid__item card" data-cols="xxs:6 sm:3">
+                      <figure class="card-image">
+                        <img
+                          src="assets/img/common/pic19.png"
+                          srcset="assets/img/common/pic19.png, assets/img/common/pic19@2x.png 2x"
+                          alt=""
+                        />
+                        <figcaption class="card-figcaption">SP: 6/12 - TAB: 6/12</figcaption>
+                      </figure>
+                    </li>
+                    <li class="l-grid__item card" data-cols="xxs:12 sm:8">
+                      <figure class="card-image">
+                        <img
+                          src="assets/img/common/pic20.png"
+                          srcset="assets/img/common/pic20.png, assets/img/common/pic20@2x.png 2x"
+                          alt=""
+                        />
+                        <figcaption class="card-figcaption">SP: 6/12 - TAB: 6/12</figcaption>
+                      </figure>
+                    </li>
+                    <li class="l-grid__item card" data-cols="xxs:6 sm:4">
+                      <figure class="card-image">
+                        <img
+                          src="assets/img/common/pic21.png"
+                          srcset="assets/img/common/pic21.png, assets/img/common/pic21@2x.png 2x"
+                          alt=""
+                        />
+                        <figcaption class="card-figcaption">SP: 6/12 - TAB: 6/12</figcaption>
+                      </figure>
+                    </li>
+                    <li class="l-grid__item card" data-cols="xxs:6 sm:4">
+                      <figure class="card-image">
+                        <img
+                          src="assets/img/common/pic22.png"
+                          srcset="assets/img/common/pic22.png, assets/img/common/pic22@2x.png 2x"
+                          alt=""
+                        />
+                        <figcaption class="card-figcaption">SP: 6/12 - TAB: 6/12</figcaption>
+                      </figure>
+                    </li>
+                    <li class="l-grid__item card" data-cols="xxs:12 sm:8">
+                      <figure class="card-image">
+                        <img
+                          src="assets/img/common/pic23.png"
+                          srcset="assets/img/common/pic23.png, assets/img/common/pic23@2x.png 2x"
+                          alt=""
+                        />
+                        <figcaption class="card-figcaption">SP: 6/12 - TAB: 6/12</figcaption>
+                      </figure>
+                    </li>
+                    <li class="l-grid__item card" data-cols="xxs:4">
+                      <figure class="card-image">
+                        <img
+                          src="assets/img/common/pic24.png"
+                          srcset="assets/img/common/pic24.png, assets/img/common/pic24@2x.png 2x"
+                          alt=""
+                        />
+                        <figcaption class="card-figcaption">SP: 6/12 - TAB: 6/12</figcaption>
+                      </figure>
+                    </li>
+                    <li class="l-grid__item card" data-cols="xxs:4">
+                      <figure class="card-image">
+                        <img
+                          src="assets/img/common/pic25.png"
+                          srcset="assets/img/common/pic25.png, assets/img/common/pic25@2x.png 2x"
+                          alt=""
+                        />
+                        <figcaption class="card-figcaption">SP: 6/12 - TAB: 6/12</figcaption>
+                      </figure>
+                    </li>
+                    <li class="l-grid__item card" data-cols="xxs:4">
+                      <figure class="card-image">
+                        <img
+                          src="assets/img/common/pic26.png"
+                          srcset="assets/img/common/pic26.png, assets/img/common/pic26@2x.png 2x"
+                          alt=""
+                        />
+                        <figcaption class="card-figcaption">SP: 6/12 - TAB: 6/12</figcaption>
+                      </figure>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section alignment-section" id="alignment">
+        <div class="title-container">
+          <h2 class="heading-title -colorBase c-inview" data-type="slideCubeIn">Alignment</h2>
+          <p class="text-explanation -colorBase">
+            水平方向の位置揃えや<br />垂直方向の位置揃えもできます。<br />左のカラムに大きな写真、右のカラムにはテキストを<br />天地中央には配置なんてことも可能です。
+          </p>
+        </div>
+        <div class="l-spacer -smallTop" data-space="xl:xlargeTop">
+          <div class="container">
+            <ul class="l-grid" data-gutter="normal">
+              <li class="l-grid__item alignment-item" data-cols="xxs:4 xl:2" data-align="start">
+                <dl class="alignment-item__body -left">
+                  <dt class="alignment-item__figure">
+                    <img src="assets/img/common/left.png" alt="" class="alignment-item__icon" />
+                  </dt>
+                  <dd class="alignment-item__figcaption">Left</dd>
+                </dl>
+              </li>
+              <li class="l-grid__item alignment-item" data-cols="xxs:4 xl:2" data-align="center">
+                <dl class="alignment-item__body -center">
+                  <dt class="alignment-item__figure">
+                    <img src="assets/img/common/center.png" alt="" class="alignment-item__icon" />
+                  </dt>
+                  <dd class="alignment-item__figcaption">Center</dd>
+                </dl>
+              </li>
+              <li class="l-grid__item alignment-item" data-cols="xxs:4 xl:2" data-align="end">
+                <dl class="alignment-item__body -right">
+                  <dt class="alignment-item__figure">
+                    <img src="assets/img/common/right.png" alt="" class="alignment-item__icon" />
+                  </dt>
+                  <dd class="alignment-item__figcaption">Right</dd>
+                </dl>
+              </li>
+              <li class="l-grid__item alignment-item" data-cols="xxs:4 xl:2" data-align="top">
+                <dl class="alignment-item__body -top">
+                  <dt class="alignment-item__figure">
+                    <img src="assets/img/common/top.png" alt="" class="alignment-item__icon" />
+                  </dt>
+                  <dd class="alignment-item__figcaption">Top</dd>
+                </dl>
+              </li>
+              <li class="l-grid__item alignment-item" data-cols="xxs:4 xl:2" data-align="middle">
+                <dl class="alignment-item__body -middle">
+                  <dt class="alignment-item__figure">
+                    <img src="assets/img/common/middle.png" alt="" class="alignment-item__icon" />
+                  </dt>
+                  <dd class="alignment-item__figcaption">Middle</dd>
+                </dl>
+              </li>
+              <li class="l-grid__item alignment-item" data-cols="xxs:4 xl:2" data-align="bottom">
+                <dl class="alignment-item__body -bottom">
+                  <dt class="alignment-item__figure">
+                    <img src="assets/img/common/bottom.png" alt="" class="alignment-item__icon" />
+                  </dt>
+                  <dd class="alignment-item__figcaption">Bottom</dd>
+                </dl>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="section direction-section" id="direction">
+        <div class="title-container">
+          <h2 class="heading-title c-inview" data-type="slideCubeIn">Direction</h2>
+          <p class="text-explanation">
+            カラムの並び順も変更可能。<br />カスタマイズ次第では、<br
+              class="u-break -xxs"
+            />個別に順序を入れ替えることだってできる。
+          </p>
+        </div>
+        <div class="l-spacer -largeTop">
+          <div class="container">
+            <div class="l-grid" data-gutter="small">
+              <div class="l-grid__item normal-area" data-cols="xxs:12 md:6">
+                <h3 class="contents-title">Normal →</h3>
+                <div class="l-spacer -xxsmallTop">
+                  <ol class="l-grid" data-gutter="small xl:normal">
+                    <li class="l-grid__item" data-cols="xxs:2">1</li>
+                    <li class="l-grid__item" data-cols="xxs:2">2</li>
+                    <li class="l-grid__item" data-cols="xxs:2">3</li>
+                    <li class="l-grid__item" data-cols="xxs:2">4</li>
+                    <li class="l-grid__item" data-cols="xxs:2">5</li>
+                    <li class="l-grid__item" data-cols="xxs:2">6</li>
+                    <li class="l-grid__item" data-cols="xxs:2">7</li>
+                    <li class="l-grid__item" data-cols="xxs:2">8</li>
+                    <li class="l-grid__item" data-cols="xxs:2">9</li>
+                    <li class="l-grid__item" data-cols="xxs:2">10</li>
+                    <li class="l-grid__item" data-cols="xxs:2">11</li>
+                    <li class="l-grid__item" data-cols="xxs:2">12</li>
+                    <li class="l-grid__item" data-cols="xxs:2">13</li>
+                    <li class="l-grid__item" data-cols="xxs:2">14</li>
+                    <li class="l-grid__item" data-cols="xxs:2">15</li>
+                    <li class="l-grid__item" data-cols="xxs:2">16</li>
+                    <li class="l-grid__item" data-cols="xxs:2">17</li>
+                    <li class="l-grid__item" data-cols="xxs:2">18</li>
+                    <li class="l-grid__item" data-cols="xxs:2">19</li>
+                    <li class="l-grid__item" data-cols="xxs:2">20</li>
+                    <li class="l-grid__item" data-cols="xxs:2">21</li>
+                    <li class="l-grid__item" data-cols="xxs:2">22</li>
+                    <li class="l-grid__item" data-cols="xxs:2">23</li>
+                    <li class="l-grid__item" data-cols="xxs:2">24</li>
+                  </ol>
+                </div>
+              </div>
+              <div class="l-grid__item reverse-area" data-cols="xxs:12 md:6">
+                <h3 class="contents-title -right">← Reverse</h3>
+                <div class="l-spacer -xxsmallTop">
+                  <ol class="l-grid" data-gutter="small xl:normal" data-dir="reverse">
+                    <li class="l-grid__item" data-cols="xxs:2">1</li>
+                    <li class="l-grid__item" data-cols="xxs:2">2</li>
+                    <li class="l-grid__item" data-cols="xxs:2">3</li>
+                    <li class="l-grid__item" data-cols="xxs:2">4</li>
+                    <li class="l-grid__item" data-cols="xxs:2">5</li>
+                    <li class="l-grid__item" data-cols="xxs:2">6</li>
+                    <li class="l-grid__item" data-cols="xxs:2">7</li>
+                    <li class="l-grid__item" data-cols="xxs:2">8</li>
+                    <li class="l-grid__item" data-cols="xxs:2">9</li>
+                    <li class="l-grid__item" data-cols="xxs:2">10</li>
+                    <li class="l-grid__item" data-cols="xxs:2">11</li>
+                    <li class="l-grid__item" data-cols="xxs:2">12</li>
+                    <li class="l-grid__item" data-cols="xxs:2">13</li>
+                    <li class="l-grid__item" data-cols="xxs:2">14</li>
+                    <li class="l-grid__item" data-cols="xxs:2">15</li>
+                    <li class="l-grid__item" data-cols="xxs:2">16</li>
+                    <li class="l-grid__item" data-cols="xxs:2">17</li>
+                    <li class="l-grid__item" data-cols="xxs:2">18</li>
+                    <li class="l-grid__item" data-cols="xxs:2">19</li>
+                    <li class="l-grid__item" data-cols="xxs:2">20</li>
+                    <li class="l-grid__item" data-cols="xxs:2">21</li>
+                    <li class="l-grid__item" data-cols="xxs:2">22</li>
+                    <li class="l-grid__item" data-cols="xxs:2">23</li>
+                    <li class="l-grid__item" data-cols="xxs:2">24</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="l-footer">
+        <div class="footer-wrapper">
+          <div class="footer-content">
+            <ul class="l-grid" data-gutter="normal">
+              <li class="l-grid__item" data-cols="xxs:Five">
+                <figure class="footer-figure">
+                  <img
+                    src="assets/img/common/footer-pic1.png"
+                    srcset="assets/img/common/footer-pic1.png, assets/img/common/footer-pic1@2x.png 2x"
+                    alt=""
+                  />
+                </figure>
+              </li>
+              <li class="l-grid__item" data-cols="xxs:Five">
+                <figure class="footer-figure">
+                  <img
+                    src="assets/img/common/footer-pic2.png"
+                    srcset="assets/img/common/footer-pic2.png, assets/img/common/footer-pic2@2x.png 2x"
+                    alt=""
+                  />
+                </figure>
+              </li>
+              <li class="l-grid__item" data-cols="xxs:Five">
+                <figure class="footer-figure">
+                  <img
+                    src="assets/img/common/footer-pic3.png"
+                    srcset="assets/img/common/footer-pic3.png, assets/img/common/footer-pic3@2x.png 2x"
+                    alt=""
+                  />
+                </figure>
+              </li>
+              <li class="l-grid__item" data-cols="xxs:Five">
+                <figure class="footer-figure">
+                  <img
+                    src="assets/img/common/footer-pic4.png"
+                    srcset="assets/img/common/footer-pic4.png, assets/img/common/footer-pic4@2x.png 2x"
+                    alt=""
+                  />
+                </figure>
+              </li>
+              <li class="l-grid__item" data-cols="xxs:Five">
+                <figure class="footer-figure">
+                  <img
+                    src="assets/img/common/footer-pic5.png"
+                    srcset="assets/img/common/footer-pic5.png, assets/img/common/footer-pic5@2x.png 2x"
+                    alt=""
+                  />
+                </figure>
+              </li>
+            </ul>
+          </div>
+          <p class="footer-text c-inview" data-type="zoomIn" data-duration="slow">
+            さあ、あなたも自分の<br class="u-break -xxs" />CSSグリッドシステムを作ろう。
+          </p>
+          <p class="footer-button c-button button button-md button-xlg">
+            <a href="https://shibajuku.net/olex/" class="footer-button__link c-button__link">How to Make</a>
+          </p>
+          <div class="l-spacer -mediumTop -pt80">
+            <div class="l-grid" data-align="center md:start">
+              <div class="l-grid__item" data-cols="xxs:12 md:6">
+                <p class="footer-logo">
+                  Olex.css<small class="footer-logo__subtext">Ore no Flexible CSS Grid System.</small>
+                </p>
+              </div>
+              <div class="l-grid__item" data-cols="xxs:12 md:6">
+                <div class="l-spacer -xlargeTop" data-space="md:xxsmallTop">
+                  <div class="l-grid footer-sns" data-align="center md:end" data-gutter="small">
+                    <p class="l-grid__item sns-text" data-cols="xxs:12 md:Auto" data-align="center">Follow Me</p>
+                    <p class="l-grid__item">
+                      <a href="#"><img src="assets/img/common/icon-twitter.png" alt="" class="sns-icon" /></a>
+                    </p>
+                    <p class="l-grid__item">
+                      <a href="#"><img src="assets/img/common/icon-instagram.png" alt="" class="sns-icon" /></a>
+                    </p>
+                  </div>
+                </div>
+                <p class="copyright">
+                  <small lang="en">&copy;<time> 2021</time><a href=""> Shibata Hironori.</a></small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

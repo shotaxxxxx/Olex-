@@ -25,4 +25,16 @@
       display: none;
     }
   }
+
+  &.-lg {
+    display: inline-block;
+
+    @include mq("sm") {
+      display: none;
+    }
+
+    @include mq("xl") {
+      display: inline-block;
+    }
+  }
 }

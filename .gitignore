@@ -71,4 +71,4 @@ typings/
 
 
 config/mysql/mysql_data/
-public/
+# public/

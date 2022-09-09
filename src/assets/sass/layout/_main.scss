@@ -6,4 +6,416 @@
 -----------------------------------------------------*/
 .l-main {
   clear: both;
+
+  @include mq("xl") {
+    padding-top: 0;
+  }
+}
+
+.hero {
+  padding-top: 126px;
+  background-color: $base-color;
+
+  .l-grid {
+    background-color: $base-color;
+  }
+
+  @include mq("xl") {
+    padding-top: 0;
+  }
+}
+
+.hero-textArea {
+  padding: 0 18px 108px;
+
+  @include mq("md") {
+    padding: 0 0 80px 4.8vw;
+  }
+
+  @include mq("xl") {
+    padding: 130px 0 45px 4.8vw;
+  }
+
+  @include mq("xxl") {
+    padding: 130px 0 70px 6.07vw;
+  }
+}
+
+.hero-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  @include mq("md") {
+    font-size: 3.75rem;
+  }
+
+  @include mq("lg") {
+    font-size: 4.5rem;
+  }
+
+  @include mq("xxl") {
+    font-size: 5rem;
+  }
+}
+
+.hero-text {
+  padding-top: 20px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 2;
+
+  @include mq("md") {
+    font-size: 1rem;
+  }
+}
+
+.hero-imageArea {
+  padding: 40px 4.8vw;
+  background-color: $main-color;
+
+  @include mq("xl") {
+    padding: 140px 4.8vw 80px;
+  }
+
+  @include mq("xxl") {
+    padding: 140px 6.07vw 80px;
+  }
+}
+
+.hero-image {
+  position: relative;
+  filter: grayscale(100%);
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover {
+    filter: grayscale(0%);
+
+    img {
+      transform: scale(1.1);
+    }
+  }
+
+  @include mq("xxl") {
+    height: 550px;
+  }
+}
+
+.overview-section {
+  padding-top: 95px;
+  background-color: $background-color;
+}
+
+.container {
+  padding: 0 4.8vw;
+
+  &.-bgcolor {
+    background-color: $background-color;
+  }
+
+  @include mq("xxl") {
+    padding: 0 6.07vw;
+  }
+}
+
+.bgmask {
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background-color: $main-color;
+
+    @include mq("md") {
+      height: 55%;
+    }
+
+    @include mq("xl") {
+      width: 45%;
+      height: 90%;
+    }
+  }
+}
+
+.title-container {
+  padding: 0 4.8vw;
+
+  @include mq("xxl") {
+    padding: 0 6.07vw;
+  }
+}
+
+.text-explanation {
+  padding-top: 15px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 2;
+  text-align: center;
+
+  &.-colorBase {
+    color: $base-color;
+  }
+
+  @include mq("md") {
+    font-size: 1rem;
+  }
+
+  @include mq("xl") {
+    padding-top: 28px;
+  }
+}
+
+.contents-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  &.-secondary {
+    color: $secondary-text-color;
+  }
+
+  &.-right {
+    text-align: right;
+  }
+
+  @include mq("md") {
+    font-size: 2.25rem;
+  }
+
+  @include mq("lg") {
+    font-size: 2.5rem;
+  }
+  @include mq("xl") {
+    font-size: 3rem;
+  }
+}
+
+.contents-text {
+  padding-top: 14px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 2.2857;
+
+  &.-secondary {
+    color: $secondary-text-color;
+  }
+
+  @include mq("md") {
+    font-size: 1rem;
+  }
+}
+
+.overview__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .item-title {
+    margin-top: 27px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .item-text {
+    margin-top: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 2;
+    text-align: center;
+  }
+
+  .item-figure {
+    order: -1;
+    width: 40px;
+  }
+}
+
+.feature__item {
+  padding: 70px 90px;
+  background-color: $base-color;
+
+  @include mq("md") {
+    padding: 30px 40px;
+  }
+
+  @include mq("xl") {
+    padding: 57px 40px;
+  }
+}
+
+.grid-section {
+  padding: 60px 0;
+  background-color: $base-color;
+}
+
+.l-spacer {
+  .-area {
+    @include mq("xl") {
+      padding: 65px 20px;
+    }
+  }
+}
+
+.card {
+  filter: grayscale(100%);
+  overflow: hidden;
+
+  .card-image {
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: scale 0.3s ease-out;
+    }
+  }
+
+  .card-figcaption {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: $base-color;
+    font-size: 0.625rem;
+    text-align: center;
+  }
+
+  &:hover {
+    filter: grayscale(0%);
+
+    .card-image {
+      img {
+        scale: 1.1;
+      }
+    }
+
+    .card-figcaption {
+      opacity: 1;
+    }
+  }
+}
+
+.alignment-section {
+  padding-top: 60px;
+  padding-bottom: 120px;
+  background-color: $main-color;
+
+  @include mq("xl") {
+    padding-top: 120px;
+    padding-bottom: 240px;
+  }
+}
+
+.alignment-item {
+  min-height: 105px;
+  background-color: #000;
+
+  @include mq("md") {
+    min-height: 160px;
+  }
+}
+
+.alignment-item__body {
+  background-color: $base-color;
+
+  &.-left,
+  &.-center,
+  &.-right {
+    padding: 25px 8px;
+
+    @include mq("md") {
+      padding: 50px 14px;
+    }
+  }
+
+  &.-top,
+  &.-middle,
+  &.-bottom {
+    @include mq("md") {
+      padding: 9px 0;
+    }
+  }
+}
+
+.alignment-item__figure {
+  text-align: center;
+}
+
+.alignment-item__icon {
+  width: 19px;
+}
+
+.alignment-item__figcaption {
+  padding-top: 5px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-align: center;
+
+  @include mq("md") {
+    font-size: 0.75rem;
+  }
+}
+
+.direction-section {
+  padding-top: 60px;
+  padding-bottom: 128px;
+  background-color: $base-color;
+
+  @include mq("xl") {
+    padding-top: 120px;
+    padding-bottom: 240px;
+  }
+}
+
+.normal-area,
+.reverse-area {
+  .l-grid__item {
+    padding: 36px 0;
+    font-weight: 700;
+    text-align: center;
+
+    @include mq("xl") {
+      padding: 46px 0;
+    }
+  }
+}
+
+.normal-area {
+  .l-grid__item {
+    background-color: $direction-color;
+  }
+}
+
+.reverse-area {
+  .l-grid__item {
+    background-color: $background-color;
+  }
+}
+
+.sticky-item {
+  position: sticky;
+  top: 150px;
 }

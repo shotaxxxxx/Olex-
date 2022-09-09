@@ -8,3 +8,26 @@
 .c-heading {
   display: block;
 }
+
+.heading-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-align: center;
+
+  &.-colorBase {
+    color: $base-color;
+  }
+
+  @include mq("md") {
+    font-size: 3rem;
+  }
+
+  @include mq("lg") {
+    font-size: 3.5rem;
+  }
+
+  @include mq("xl") {
+    font-size: 4rem;
+  }
+}
